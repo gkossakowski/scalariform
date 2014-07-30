@@ -22,7 +22,7 @@ object ScalariformBuild extends Build {
       |
       |Using 1.7 to build requires setting SBT to use JDK 1.7 or higher -- if SBT is
       |booting on JDK 1.6, you will get a javax.swing related compilation error.""".stripMargin
-   assert(specVersion == "1.7", mismatchedSpecificationMessage)
+   assert(specVersion == "1.7" || specVersion == "1.8", mismatchedSpecificationMessage)
 
   lazy val commonSettings = Defaults.defaultSettings ++ SbtScalariform.defaultScalariformSettings ++ sonatypeSettings ++ Seq(
     organization := "com.danieltrinh",
